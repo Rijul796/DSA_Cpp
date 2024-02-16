@@ -279,3 +279,23 @@ using namespace std;
 //         cout<<arr[i]<<" ";
 //     }
 // }
+
+int main()
+{
+    int arr[]={12,34,87,50,36,2};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    for (int i = 0; i < n; i++)
+    {
+        int j=i;
+        while (j>0&&arr[j-1]>arr[j])//while value of j is greater than 0 and the element on the left is greater than the element on the right side of the array 
+        {
+            swap(arr[j-1],arr[j]);// if the elements on the left are greater then swapping will be done and value of j will e decreased by 1 to check for the next left index with the swapped element
+            j--;
+        }
+        
+    }
+    for (int i = 0; i < n; i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+}
