@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-int searchInsert(vector<int>& nums, int target) {
+int ele_index(vector<int>& nums, int target) {
     int low = 0, high = nums.size() - 1;
     
     while (low <= high) {
@@ -21,6 +21,6 @@ int main() {
     vector<int> nums = {1, 4, 6, 8, 10};
     int target;
     cin>>target;
-    cout << searchInsert(nums, target);
+    cout << ele_index(nums, target);
     return 0;
 }
