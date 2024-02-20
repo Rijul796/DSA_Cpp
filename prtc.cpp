@@ -248,13 +248,13 @@ using namespace std;
 //             arr[i]=arr[min];
 //             arr[min]=temp;
 //         }
-        
+
 //     }
 //     for (int i = 0; i < n; i++)
 //     {
 //         cout<<arr[i]<<" ";
 //     }
-    
+
 // }
 
 // int main()
@@ -272,10 +272,41 @@ using namespace std;
 //             arr[i+1]=temp;
 //         }
 //         }
-        
+
 //     }
 //     for (int i = 0; i < n; i++)
 //     {
 //         cout<<arr[i]<<" ";
 //     }
 // }
+
+void bctrk(vector<int> &arr,int i, int n)
+{
+    if (i == n)
+    {
+        for (int i : arr)
+        {
+            cout << i << " ";
+        }
+        return;
+    }
+    else
+    {
+        bctrk(arr,i++, n );
+    }
+}
+
+int main()
+{
+    vector<int> arr;
+    int n;
+    cout << "enter length of array: ";
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        arr.push_back(x);
+    }
+    bctrk(arr,0,n);
+}
