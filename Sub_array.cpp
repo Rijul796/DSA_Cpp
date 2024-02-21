@@ -53,6 +53,10 @@ void subset(char input[], char output[], int i, int j, vector<string>& list) {
 
 // Custom comparator function to sort strings by length
 bool compareByLength(const string &a, const string &b) {
+    if(a.length()==b.length())
+    {
+        return a<b;
+    }
     return a.length() < b.length();
 }
 
