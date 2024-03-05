@@ -229,7 +229,7 @@ using namespace std;
 //     string s;
 //     getline(cin, s);
 
-//     istringstream iss(s);
+//     istringstream iss(s);//each word is stored in iss 
 //     string word[100];
 //     int c = 0;
 
