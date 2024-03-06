@@ -12,6 +12,5 @@ int main()
         cout<<head->getdata()<<"------>";
         head=head->next;
     }
-    
     return 0;
 }
