@@ -14,7 +14,7 @@ int main()
         cin >> x;
         v.push_back(x);
     }
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)                                              
     {
         pq.push(v[i]);
     }
