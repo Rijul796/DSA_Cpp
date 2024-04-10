@@ -13,6 +13,13 @@ using namespace std;
 // in a binary tree having n nodes minimum possible height is log2(N+1) or log2(N+1)-1  ---> N nodes =2^(h+1)-1   N+1 nodes=2^(h+1)   log2(N+1)=h+1
 // in a binary tree where every noe has 0 or 2 children:
 // no of leave nodes is always one more than node with nodes with two childern
+
+//types of binary trees--
+//full binary tree-- if every node have 0 or 2 childrens
+//complete binary tree--if all levels are completely filled except the last level and the last level has all keys as left as possible
+//perfect binary tree-- in which all internnal nodes have two children and all leaf nodes are at the same level
+//balanced binary tree--- height diffence of left and right(after the root node)  is same to the leaf node
+//degenerate binary tree--- tree where every internal node has only one child
 class node
 {
 public:
