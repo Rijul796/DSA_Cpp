@@ -168,3 +168,81 @@ int main()
     cout<<noOfLeafNode(root);
     return 0;
 }
+/*
+#include<bits/stdc++.h>
+using namespace std;
+class node{
+    public:
+    int data;
+    node* left;
+    node* right;
+    node(int data)
+    {
+        this->data=data;
+        left=right=NULL;
+    }
+};
+
+void printInOrder(node* root)
+{
+    if(root==NULL)
+    {
+        return;
+    }
+    printInOrder(root->left);
+    cout<<root->data<<" ";
+    printInOrder(root->right);
+}
+
+void printPostOrder(node* root)
+{
+    if(root==NULL)
+    {
+        return;
+    }
+    printPostOrder(root->left);
+    printPostOrder(root->right);
+    cout<<root->data<<" ";
+}
+
+void printPreOrder(node* root)
+{
+    if(root==NULL)
+    {
+        return;
+    }
+    cout<<root->data<<" ";
+    printPreOrder(root->left);
+    printPreOrder(root->right);
+}
+
+node* build(int arr[], node* &root, int i, int n) { 
+    if (i < n) { 
+        node* temp = new node(arr[i]); 
+        root = temp; 
+        root->left = build(arr, root->left, 2 * i + 1, n); 
+        root->right = build(arr, root->right, 2 * i + 2, n); 
+    } 
+    return root; 
+}
+int main()
+{
+    // node* root=new node(1);
+    // root->left=new node(2);
+    // root->right=new node(3);
+    // root->left->left=new node(4);
+    // root->left->right=new node(5);
+    // root->right->left=new node(6);
+    // root->right->right=new node(7);
+    int arr[]={1,2,3,4,5,6,7};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    node* root=NULL;
+    build(arr,root,0,n);
+    printInOrder(root);
+    cout<<endl;
+    printPostOrder(root);
+    cout<<endl;
+    printPreOrder(root);
+    return 0;
+}
+*/
