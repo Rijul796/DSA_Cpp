@@ -14,12 +14,12 @@ using namespace std;
 // in a binary tree where every noe has 0 or 2 children:
 // no of leave nodes is always one more than node with nodes with two childern
 
-//types of binary trees--
-//full binary tree-- if every node have 0 or 2 childrens
-//complete binary tree--if all levels are completely filled except the last level and the last level has all keys as left as possible
-//perfect binary tree-- in which all internnal nodes have two children and all leaf nodes are at the same level
-//balanced binary tree--- height diffence of left and right(after the root node)  is same to the leaf node
-//degenerate binary tree--- tree where every internal node has only one child
+// types of binary trees--
+// full binary tree-- if every node have 0 or 2 childrens
+// complete binary tree--if all levels are completely filled except the last level and the last level has all keys as left as possible
+// perfect binary tree-- in which all internnal nodes have two children and all leaf nodes are at the same level
+// balanced binary tree--- height diffence of left and right(after the root node)  is same to the leaf node
+// degenerate binary tree--- tree where every internal node has only one child
 class node
 {
 public:
@@ -50,17 +50,20 @@ node *buildTree()
 }
 
 // Function to perform level order traversal of the binary tree
-void levelOrderTraversal(node* root) {
+void levelOrderTraversal(node *root)
+{
     if (root == nullptr)
         return;
 
-    queue<node*> q;
+    queue<node *> q;
     q.push(root);
 
-    while (!q.empty()) {
+    while (!q.empty())
+    {
         int levelSize = q.size();
-        for (int i = 0; i < levelSize; i++) {
-            node* current = q.front();
+        for (int i = 0; i < levelSize; i++)
+        {
+            node *current = q.front();
             q.pop();
             cout << current->data << " ";
             if (current->left)
@@ -137,18 +140,31 @@ void buildFromLevel(node *&root)
     }
 }
 
-int noOfLeafNode(node* root)
+int noOfLeafNode(node *root)
 {
-    if(root == NULL) {
+    if (root == NULL)
+    {
         return 0; // If the tree is empty, return 0
     }
-    if(root->left == NULL && root->right == NULL) {
+    if (root->left == NULL && root->right == NULL)
+    {
         return 1; // If the node is a leaf, return 1
     }
     // Recursively count leaf nodes in left and right subtrees
     return noOfLeafNode(root->left) + noOfLeafNode(root->right);
 }
 
+int height(node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    int left = height(root->left);
+    int right = height(root->right);
+    int ans = max(left, right) + 1;
+    return ans;
+}
 
 int main()
 {
@@ -165,7 +181,8 @@ int main()
     buildFromLevel(root);
     cout << "Level Order Traversal:\n";
     levelOrderTraversal(root);
-    cout<<noOfLeafNode(root);
+    cout << noOfLeafNode(root) << endl;
+    cout << "height is: " << height(root);
     return 0;
 }
 /*
@@ -216,14 +233,14 @@ void printPreOrder(node* root)
     printPreOrder(root->right);
 }
 
-node* build(int arr[], node* &root, int i, int n) { 
-    if (i < n) { 
-        node* temp = new node(arr[i]); 
-        root = temp; 
-        root->left = build(arr, root->left, 2 * i + 1, n); 
-        root->right = build(arr, root->right, 2 * i + 2, n); 
-    } 
-    return root; 
+node* build(int arr[], node* &root, int i, int n) {
+    if (i < n) {
+        node* temp = new node(arr[i]);
+        root = temp;
+        root->left = build(arr, root->left, 2 * i + 1, n);
+        root->right = build(arr, root->right, 2 * i + 2, n);
+    }
+    return root;
 }
 int main()
 {
@@ -246,3 +263,29 @@ int main()
     return 0;
 }
 */
+
+/*
+  vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>> result;
+        if (root == nullptr)
+            return result;
+
+        queue<TreeNode*> q;
+        q.push(root);
+
+        while (!q.empty()) {
+            int levelSize = q.size();
+            vector<int> currentLevel;
+            for (int i = 0; i < levelSize; i++) {
+                TreeNode* current = q.front();
+                q.pop();
+                currentLevel.push_back(current->val);
+                if (current->left)
+                    q.push(current->left);
+                if (current->right)
+                    q.push(current->right);
+            }
+            result.push_back(currentLevel);
+        }
+        return result;
+    }*/
