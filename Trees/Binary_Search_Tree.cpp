@@ -61,11 +61,6 @@ bool search(node *root, int data)
     return search(root->right, data);
 }
 
-void deleteNode(node* &root)
-{
-    
-}
-
 int main()
 {
     int arr[10];

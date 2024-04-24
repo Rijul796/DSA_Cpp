@@ -18,7 +18,7 @@ using namespace std;
 // full binary tree-- if every node have 0 or 2 childrens
 // complete binary tree--if all levels are completely filled except the last level and the last level has all keys as left as possible
 // perfect binary tree-- in which all internnal nodes have two children and all leaf nodes are at the same level
-// balanced binary tree--- height diffence of left and right(after the root node)  is same to the leaf node
+// balanced binary tree--- height diffence of left and right(after the root node)  is same to the leaf node diff=abs(height(root->left)-height(root->right))<=1;
 // degenerate binary tree--- tree where every internal node has only one child
 class node
 {
